@@ -61,7 +61,7 @@ const deleteArticle = (id) => {
             </td>
             <td class="border-b border-grey-100 p-4 pl-8 text-slate-500">
               <img
-                :src="'/public/storage/' + article.image"
+                :src="'/storage/' + article.image"
                 :alt="article.image"
               />
             </td>
