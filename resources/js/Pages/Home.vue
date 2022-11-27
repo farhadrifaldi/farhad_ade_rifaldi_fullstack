@@ -60,14 +60,14 @@ const TESTIMONIES = [
     image: "/images/67 1.jpg",
   },
   {
-    name: "Michael L. Douglas",
+    name: "Pauline White",
     content:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis earum delectus distinctio quidem possimus! Quidem, nulla alias! Itaque laudantium corporis dolorum aut voluptates voluptatum amet rerum.",
     rating: 3,
     image: "/images/60 1.jpg",
   },
   {
-    name: "Michael L. Douglas",
+    name: "Taylor Otwell",
     content:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis earum delectus distinctio quidem possimus! Quidem, nulla alias! Itaque laudantium corporis dolorum aut voluptates voluptatum amet rerum.",
     rating: 4,
