@@ -17,11 +17,15 @@ const SOCIALS = [
   <div>
     <div class="h-16 flex justify-center bg-primary-base">
       <div class="container flex justify-between items-center">
-        <img src="/images/logo-white.png" alt="" />
+        <Link href="/">
+          <img src="/images/logo-white.png" alt="" />
+        </Link>
         <div class="text-white hidden md:flex">
-          <Link class="py-1 px-7 font-semibold">Home</Link>
-          <Link class="py-1 px-7 font-semibold">Article</Link>
-          <Link class="py-1 px-7 font-semibold bg-red-600 rounded-xl"
+          <Link class="py-1 px-7 font-semibold" href="/">Home</Link>
+          <Link class="py-1 px-7 font-semibold" href="/articles">Article</Link>
+          <Link
+            class="py-1 px-7 font-semibold bg-red-600 rounded-xl"
+            href="/register"
             >Sign Up</Link
           >
         </div>
@@ -40,13 +44,17 @@ const SOCIALS = [
       >
         <ul>
           <li class="py-3 border-b-2 border-primary-lighter">
-            <Link class="py-1 px-7 font-semibold">Home</Link>
+            <Link class="py-1 px-7 font-semibold" href="/">Home</Link>
           </li>
           <li class="py-3 border-b-2 border-primary-lighter">
-            <Link class="py-1 px-7 font-semibold">Article</Link>
+            <Link class="py-1 px-7 font-semibold" href="/articles"
+              >Article</Link
+            >
           </li>
           <li class="py-3 border-b-2 border-primary-lighter">
-            <Link class="py-1 px-7 font-semibold">Sign Up</Link>
+            <Link class="py-1 px-7 font-semibold" href="/register"
+              >Sign Up</Link
+            >
           </li>
         </ul>
       </div>
