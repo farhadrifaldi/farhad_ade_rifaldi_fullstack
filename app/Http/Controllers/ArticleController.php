@@ -80,4 +80,12 @@ class ArticleController extends Controller
 
         return redirect(route('article.show'));
     }
+
+    public function showPublic()
+    {
+        $articles = Article::all();
+        return Inertia::render("ArticleList", [
+            'articles' => $articles
+        ]);
+    }
 }

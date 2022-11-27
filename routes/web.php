@@ -21,22 +21,27 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('articles', [ArticleController::class, 'showPublic'])->name('article.public');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::prefix('articles')->group(function () {
-        Route::get('/', [ArticleController::class, 'show'])->name('article.show');
-        Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
-        Route::get('/edit/{id}', [ArticleController::class, 'edit'])->name('article.edit');
-        Route::post('/insert', [ArticleController::class, 'insert'])->name('article.insert');
-        Route::post('/update/{id}', [ArticleController::class, 'update'])->name('article.update');
-        Route::delete('/delete', [ArticleController::class, 'delete'])->name('article.delete');
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/', function () {
+            return Inertia::render('Dashboard');
+        })->name('dashboard');
+        Route::prefix('articles')->group(function () {
+            Route::get('/', [ArticleController::class, 'show'])->name('article.show');
+            Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
+            Route::get('/edit/{id}', [ArticleController::class, 'edit'])->name('article.edit');
+            Route::post('/insert', [ArticleController::class, 'insert'])->name('article.insert');
+            Route::post('/update/{id}', [ArticleController::class, 'update'])->name('article.update');
+            Route::delete('/delete', [ArticleController::class, 'delete'])->name('article.delete');
+        });
     });
 });
 
